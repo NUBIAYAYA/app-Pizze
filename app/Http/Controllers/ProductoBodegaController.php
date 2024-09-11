@@ -7,50 +7,44 @@ use Illuminate\Http\Request;
 class ProductoBodegaController extends Controller
 
 {
-    //
+
+     //
      
-    // public function GetData(Request $request){
-    //     $rta= 10+20;
-    //     return response()-> json ([
-    //         'status '=> '200',
-    //         'message'=> 'Data..',
-    //         'respuesta'=> $rta
-    
-    //     ]);
+     public function getData(Request $request){
+        $rta = 10 + 20;
+        return response()->json([
+            'status' => '200',
+            'message' => 'guardado con exito',
+            'result' => $rta
+        ]);
+    }
+    public function save (Request $request){
+        return response()->json([
+            'status' => '200',
+            'message' => 'guardado con exito',
+            'data' => $request -> nombre,
+        ]);
+    }
 
-    // }
 
-
-
-// public function save(Request $request){
-//     return response()-> json ([
-//         'status '=> '200',
-//         'message'=> 'guardado con exito'
-
-//     ]);
-// }
-
-// public function update(Request $request){
-//     return response()-> json ([
-//         'status '=> '200',
-//         'message'=> 'cambio con exito'
-
-//     ]);
-// }
-
-// public function Delete(Request $request){
-//     return response()-> json ([
-//         'status '=> '200',
-//         'message'=> 'Elimino con  exito'
-
-//     ]);
-// }
-
+    public function update (Request $request){
+        return response()->json([
+            'status' => '200',
+            'message' => 'actualizado correctamente',
+          
+         
+        ]);
+    }
+    public function delete (Request $request){
+        $rta = 10 + 20;
+        return response()->json([
+            'status' => '200',
+            'message' => 'Se elimino correctamente..',
+            'result' => $rta
+        ]);
+    }
 
 
 
 }
-
-
-
-
+ 
