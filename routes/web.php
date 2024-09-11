@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Htpp\Controllers\ClienteController;
 
 
 /*
@@ -19,3 +20,4 @@ Route::get('/', function () {
 });
 
 
+Route::get('/clientes/datos/', [ClienteController::class, 'getData']);

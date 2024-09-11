@@ -2,9 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Htpp\Controllers\AuthController;
-use App\Htpp\Controllers\ClienteController;
-
+use App\Http\Controllers\ClienteController;//una bendita p ese era el error- gracias
+use App\Http\Controllers\DetalleOrdenController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -20,5 +19,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/clientes/datos/', [ClienteController::class, 'getData']);
+// Route::GET('/Clientes/datos/', [App\Htpp\Controllers\ClienteController::class, 'getData']);
+
+Route::get('/clientes/datos', [ClienteController::class, 'getData']);
+Route::get('/DetalleOrden/datos/', [DetalleOrdenController::class, 'getData']);
+
+
 
