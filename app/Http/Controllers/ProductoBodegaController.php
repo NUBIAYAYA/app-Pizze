@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
+use App\Models\ProductoBodega;
 
 class ProductoBodegaController extends Controller
 
@@ -19,6 +19,10 @@ class ProductoBodegaController extends Controller
         ]);
     }
     public function save (Request $request){
+       $ProductoBodega=new ProductoBodega();
+       $ProductoBodega->name= $request->name;
+       $ProductoBodega->Save();
+
         return response()->json([
             'status' => '200',
             'message' => 'guardado con exito',
