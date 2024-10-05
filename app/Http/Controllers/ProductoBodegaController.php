@@ -9,7 +9,7 @@ class ProductoBodegaController extends Controller
 {
 
      //
-     
+    
      public function getData(Request $request){
         $rta = 10 + 20;
         return response()->json([
@@ -19,15 +19,28 @@ class ProductoBodegaController extends Controller
         ]);
     }
     public function save (Request $request){
-       $ProductoBodega=new ProductoBodega();
-       $ProductoBodega->name= $request->name;
-       $ProductoBodega->Save();
+
+       try{ 
+
+         $productobodega= new ProductoBodega();
+        $productobodega->Nombre_Producto= $request->nombreProducto;
+        $productobodega->Cantidad= $request->Cantidad;
+        $productobodega->Valor_Unitario_Proveedor= $request->ValorUnitarioProveedor;
+        $productobodega->Descripcion= $request->Descripcion;
+        $productobodega->Valor_Total_Proveedor= $request->ValorTotalProveedor;
+        $productobodega->save();
+
 
         return response()->json([
             'status' => '200',
             'message' => 'guardado con exito',
-            'data' => $request -> nombre,
+            'data' => $productobodega,
         ]);
+    }
+    catch(\Exception $e){
+        echo $e->getMessage();
+    }
+
     }
 
 
