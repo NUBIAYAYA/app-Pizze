@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('detalle__proveedors', function (Blueprint $table) {
+        Schema::create('detalle_proveedors', function (Blueprint $table) {
             
             $table->string('Producto');
             $table->integer('Valor_Factura');
@@ -21,7 +21,7 @@ return new class extends Migration
         $table->unsignedBigInteger('id_Proveedor');
  
         // $table->foreign('user_id')->references('id')->on('users');
-    $table->foreign('id_Proveedor')->references ('id')->on ('proveedors');
+    $table->foreign('id_Proveedor')->references ('id')->on ('proveedores');
 
 
             $table->timestamps();

@@ -11,15 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('proveedors', function (Blueprint $table) {
+        Schema::create('proveedores', function (Blueprint $table) {
             $table->id();
             $table->string('Nombre_Proveedor');
             $table->integer('Cantidad');
             $table->integer('Valor_Proveedor');
             $table->integer('Numero_Pedido');
             $table->string('Direccion');
-            $table->integer('Telefono_Fijo');
-            $table->integer('N_Celular');
+            $table->string('Telefono_Fijo');
+            $table->string('N_Celular');
             $table->string('Correo_Electronico');
             $table->string('Cuidad');
 
@@ -27,7 +27,7 @@ return new class extends Migration
         $table->unsignedBigInteger('id_Producto');
  
             // $table->foreign('user_id')->references('id')->on('users');
-        $table->foreign('id_Producto')->references ('id')->on ('producto__bodegas');    
+        $table->foreign('id_Producto')->references ('id')->on ('producto_bodegas');    
             
 
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Turno;
 
 class TurnoController extends Controller
 {
@@ -18,11 +19,26 @@ class TurnoController extends Controller
     ]);
 }
 public function save (Request $request){
+
+    try{ 
+
+        $turnos= new Turno();
+        $turnos->id_Empleado= $request->idEmpleado;
+        $turnos->Tipo_Jornada= $request->TipoJornada;
+        $turnos->Horario= $request->Horario;
+        $turnos->save();
+
+
     return response()->json([
         'status' => '200',
         'message' => 'guardado con exito',
-        'data' => $request -> nombre,
+        'data' => $request -> $Turnos,
     ]);
+
+}
+catch(\Exception $e){
+    echo $e->getMessage();
+}
 }
 
 

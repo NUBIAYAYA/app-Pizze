@@ -22,7 +22,7 @@ class ProductoBodegaController extends Controller
 
        try{ 
 
-         $productobodega= new ProductoBodega();
+        $productobodega= new Turno();
         $productobodega->Nombre_Producto= $request->nombreProducto;
         $productobodega->Cantidad= $request->Cantidad;
         $productobodega->Valor_Unitario_Proveedor= $request->ValorUnitarioProveedor;

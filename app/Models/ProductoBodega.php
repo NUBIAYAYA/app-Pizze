@@ -9,5 +9,5 @@ class ProductoBodega extends Model
 {
     use HasFactory;
     protected $table = 'producto_bodegas';
-    protected $fillable=['nombre_Producto','Cantidad','Valor_Unitario_Proveedor','Descripcion','Valor_Total_Proveedor'];
+    protected $fillable=['Nombre_Producto','Cantidad','Valor_Unitario_Proveedor','Descripcion','Valor_Total_Proveedor'];
 }

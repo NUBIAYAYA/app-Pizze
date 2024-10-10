@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreign('id_Orden')->references ('id')->on ('pedidos');
 
             $table->unsignedBigInteger('id_Producto');
-            $table->foreign('id_Producto')->references ('id')->on ('producto__bodegas');
+            $table->foreign('id_Producto')->references ('id')->on ('producto_bodegas');
             
             $table->integer('Tiempo_Entrega');
             $table->string('Prioridad');

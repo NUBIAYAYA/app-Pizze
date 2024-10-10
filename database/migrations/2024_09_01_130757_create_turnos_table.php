@@ -19,7 +19,7 @@ $table->unsignedBigInteger('id_Empleado');
  $table->foreign('id_Empleado')->references ('id')->on ('empleados');
 
             $table->string('Tipo_Jornada');
-            $table->dateTime('Horario');
+            $table->string('Horario');
             $table->timestamps();
         });
     }
