@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('pedidos', function (Blueprint $table) {
             $table->id();
-            $table->dateTime('Fecha');
+            $table->string('Fecha');
             $table->string('Estado_Pedido');
             $table->integer('Precio_Unitario');
             $table->integer('Cantidad');
             $table->string('Descripcion');
             $table->integer('Valor_Total_Pagar');
-            $table->integer('Tipo_Solicitud');
+            $table->string('Tipo_Solicitud');
             $table->string('Metodo_Pago');
 
             // $table->unsignedBigInteger('user_id');

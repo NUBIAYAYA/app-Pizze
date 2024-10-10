@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Pedido;
 
 class PedidoController extends Controller
 {
@@ -18,11 +19,32 @@ class PedidoController extends Controller
     ]);
 }
 public function save (Request $request){
+
+    try{ 
+
+        $pedido= new Pedido();
+        $pedido->Fecha= $request->Fecha;
+        $pedido->Estado_Pedido= $request->EstadoPedido;
+        $pedido->Precio_Unitario= $request->PrecioUnitario;
+        $pedido->Cantidad= $request->Cantidad;
+        $pedido->Descripcion= $request->Descripcion;
+        $pedido->Valor_Total_Pagar= $request->ValorTotalPagar;
+        $pedido->Tipo_Solicitud= $request->TipoSolicitud;
+        $pedido->Metodo_Pago= $request->MetodoPago;
+        $pedido->id_identificacion= $request->identificacion;
+        $pedido->save();
+
     return response()->json([
         'status' => '200',
         'message' => 'guardado con exito',
-        'data' => $request -> nombre,
+        'data' => $request -> $pedido,
     ]);
+
+}
+catch(\Exception $e){
+    echo $e->getMessage();
+}
+
 }
 
 

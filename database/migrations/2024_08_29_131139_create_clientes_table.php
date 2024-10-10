@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('Nombre');
             $table->string('Apellidos');
             $table->string('Direccion');
+            $table->integer('cedula');
             $table->integer('Telefono_Fijo');
             $table->integer('N_Celular');
             $table->string('Barrio');

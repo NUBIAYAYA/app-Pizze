@@ -27,6 +27,7 @@ class ClienteController extends Controller
             $cliente->Nombre= $request->nombre;
             $cliente->Apellidos= $request->apellidos;
             $cliente->Direccion= $request->direccion;
+            $cliente->Cedula= $request->Cedula;
             $cliente->Telefono_Fijo= $request->TelefonoFijo;
             $cliente->N_Celular= $request->celular;
             $cliente->Barrio= $request->barrio;
