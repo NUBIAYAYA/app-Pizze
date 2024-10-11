@@ -61,11 +61,12 @@ public function update (Request $request){
     ]);
 }
 public function delete (Request $request){
-    $rta = 10 + 20;
+    $precio=Precio::findOrFail($request->id);
+    $precio->delete();
     return response()->json([
         'status' => '200',
         'message' => 'Se elimino correctamente..',
-        'result' => $rta
+        'result' => $precio
     ]);
 }
 

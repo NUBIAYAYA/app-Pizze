@@ -63,10 +63,12 @@ class DetalleOrdenController extends Controller
         ]);
     }
     public function delete (Request $request){
-        $rta = 10 + 20;
+        $detalleOrden=Detalleorden::findOrFail($request->id);
+        $detalleOrden->delete();
         return response()->json([
             'status' => '200',
             'message' => 'Se elimino correctamente..',
+            'result' => $detalleOrden
             
         ]);
     }

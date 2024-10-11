@@ -59,11 +59,12 @@ class ProductoBodegaController extends Controller
         ]);
     }
     public function delete (Request $request){
-        $rta = 10 + 20;
+        $productobodega=ProductoBodega::findOrFail($request->id);
+        $productobodega->delete();
         return response()->json([
             'status' => '200',
             'message' => 'Se elimino correctamente..',
-            'result' => $rta
+            'result' => $productobodega
         ]);
     }
 

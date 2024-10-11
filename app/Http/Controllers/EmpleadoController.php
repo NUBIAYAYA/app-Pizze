@@ -67,11 +67,12 @@ class EmpleadoController extends Controller
         ]);
     }
     public function delete (Request $request){
-        $rta = 10 + 20;
+        $empleados=Empleado::findOrFail($request->id);
+        $empleados->delete();
         return response()->json([
             'status' => '200',
             'message' => 'Se elimino correctamente..',
-            'result' => $rta
+            'result' => $empleados
         ]);
     }
 

@@ -59,11 +59,12 @@ public function update (Request $request){
     ]);
 }
 public function delete (Request $request){
-    $rta = 10 + 20;
+    $mediopago=MedioPago::findOrFail($request->id);
+    $mediopago->delete();
     return response()->json([
         'status' => '200',
         'message' => 'Se elimino correctamente..',
-        
+        'result' => $mediopago
     ]);
 }
 

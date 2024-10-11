@@ -62,11 +62,12 @@ public function update (Request $request){
     ]);
 }
 public function delete (Request $request){
-    $rta = 10 + 20;
+    $detalle=DetalleProveedor::findOrFail($request->id);
+    $detalle->delete();
     return response()->json([
         'status' => '200',
         'message' => 'Se elimino correctamente..',
-        'result' => $rta
+        'result' => $detalle
     ]);
 }
 
