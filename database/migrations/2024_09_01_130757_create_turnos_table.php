@@ -12,12 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('turnos', function (Blueprint $table) {
+$table->id();
 // $table->unsignedBigInteger('user_id');
 $table->unsignedBigInteger('id_Empleado');
  
 // $table->foreign('user_id')->references('id')->on('users');
  $table->foreign('id_Empleado')->references ('id')->on ('empleados');
-
+            
             $table->string('Tipo_Jornada');
             $table->string('Horario');
             $table->timestamps();

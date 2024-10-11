@@ -46,11 +46,12 @@ catch(\Exception $e){
 
 public function update (Request $request){
 
-    $precio=Precio::findOrFail($request->id_Producto);
-
-    $precio-> update([
-    'Cantidad'=>$request->Cantidad,
-    ]);
+     $precio=Precio::findOrFail($request->id);
+     $precio->Precio_Unitario= $request->PrecioUnitario;
+     $precio->Cantidad= $request->Cantidad;
+     $precio->id_Producto= $request->idProducto;
+     $precio->id_Proveedor= $request->idProveedor;
+     $precio->save();
 
     return response()->json([
         'status' => '200',

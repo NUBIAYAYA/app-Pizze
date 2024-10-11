@@ -9,7 +9,7 @@ class Precio extends Model
 {
     use HasFactory;
     protected $table = 'precios';
-    protected $fillable=['Precio_Unitario','Cantidad','id_Producto','id_Proveedor'];
+    protected $fillable=['id','Precio_Unitario','Cantidad','id_Producto','id_Proveedor'];
 
 
 }
