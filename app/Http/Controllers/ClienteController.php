@@ -68,11 +68,13 @@ class ClienteController extends Controller
         ]);
     }
     public function delete (Request $request){
-        $rta = 10 + 20;
+        $cliente=Cliente::findOrFail($request->id);
+        $cliente->delete();
+
         return response()->json([
             'status' => '200',
             'message' => 'Se elimino correctamente..',
-            'result' => $rta
+            'result' => $cliente
         ]);
     }
 
