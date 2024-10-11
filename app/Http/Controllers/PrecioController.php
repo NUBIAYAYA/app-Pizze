@@ -45,6 +45,13 @@ catch(\Exception $e){
 
 
 public function update (Request $request){
+
+    $precio=Precio::findOrFail($request->id_Producto);
+
+    $precio-> update([
+    'Cantidad'=>$request->Cantidad,
+    ]);
+
     return response()->json([
         'status' => '200',
         'message' => 'actualizado correctamente',

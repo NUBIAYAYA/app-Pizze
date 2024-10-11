@@ -46,6 +46,14 @@ catch(\Exception $e){
 
 
 public function update (Request $request){
+
+    $detalle=DetalleProveedor::findOrFail($request->id_Proveedor);
+
+    $detalle-> update([
+    'Valor_Factura'=>$request->ValorFactura,
+    ]);
+
+
     return response()->json([
         'status' => '200',
         'message' => 'actualizado correctamente',

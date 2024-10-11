@@ -52,6 +52,13 @@ class EmpleadoController extends Controller
 
 
     public function update (Request $request){
+
+        $empleado=Empleado::findOrFail($request->id);
+
+        $empleado-> update([
+        'Apellidos'=>$request->apellidos,
+        ]);
+
         return response()->json([
             'status' => '200',
             'message' => 'actualizado correctamente',
@@ -67,11 +74,6 @@ class EmpleadoController extends Controller
             'result' => $rta
         ]);
     }
-
-
-
-
-
 
 
 }

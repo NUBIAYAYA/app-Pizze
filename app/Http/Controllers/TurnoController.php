@@ -43,6 +43,12 @@ catch(\Exception $e){
 
 
 public function update (Request $request){
+
+    $turnos=Turno::findOrFail($request->id_Empleado);
+
+    $turnos-> update([
+    'Tipo_Jornada'=>$request->TipoJornada,
+    ]);
     return response()->json([
         'status' => '200',
         'message' => 'actualizado correctamente',

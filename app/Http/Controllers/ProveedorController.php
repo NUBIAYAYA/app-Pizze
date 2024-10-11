@@ -50,6 +50,13 @@ catch(\Exception $e){
 }
 }
 public function update (Request $request){
+
+    $proveedor=Proveedor::findOrFail($request->id);
+
+    $proveedor-> update([
+    'Nombre_Proveedor'=>$request->NombreProveedor,
+    ]);
+
     return response()->json([
         'status' => '200',
         'message' => 'actualizado correctamente',

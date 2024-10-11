@@ -48,6 +48,13 @@ class DetalleOrdenController extends Controller
 
 
     public function update (Request $request){
+
+        $detalleOrden=Detalleorden::findOrFail($request->id_Orden);
+
+        $detalleOrden-> update([
+        'Mesa'=>$request->Mesa,
+        ]);
+
         return response()->json([
             'status' => '200',
             'message' => 'actualizado correctamente',

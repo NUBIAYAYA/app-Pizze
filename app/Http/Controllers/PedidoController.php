@@ -49,6 +49,13 @@ catch(\Exception $e){
 
 
 public function update (Request $request){
+
+    $pedido=Pedido::findOrFail($request->id);
+
+    $pedido-> update([
+    'Estado_Pedido'=>$request->EstadoPedido,
+    ]);
+
     return response()->json([
         'status' => '200',
         'message' => 'actualizado correctamente',

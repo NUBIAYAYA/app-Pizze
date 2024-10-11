@@ -53,6 +53,13 @@ class ClienteController extends Controller
 
 
     public function update (Request $request){
+
+    $cliente=Cliente::findOrFail($request->id);
+
+    $cliente-> update([
+    'Apellidos'=>$request->Apellidos,
+    ]);
+
         return response()->json([
             'status' => '200',
             'message' => 'actualizado correctamente',

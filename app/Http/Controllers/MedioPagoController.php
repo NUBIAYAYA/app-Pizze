@@ -43,6 +43,14 @@ catch(\Exception $e){
 
 
 public function update (Request $request){
+
+
+    $mediopago=MedioPago::findOrFail($request->id);
+
+    $mediopago-> update([
+    'Medio_Pago'=>$request->mediopago,
+    ]);
+
     return response()->json([
         'status' => '200',
         'message' => 'actualizado correctamente',

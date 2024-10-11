@@ -45,6 +45,12 @@ class ProductoBodegaController extends Controller
 
 
     public function update (Request $request){
+
+        $productobodega=ProductoBodega::findOrFail($request->id);
+
+        $productobodega-> update([
+        'Cantidad'=>$request->Cantidad,
+        ]);
         return response()->json([
             'status' => '200',
             'message' => 'actualizado correctamente',
