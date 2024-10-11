@@ -12,11 +12,12 @@ class ClienteController extends Controller
     //
      
     public function getData(Request $request){
-        $rta = 10 + 20;
+
+        $cliente=Cliente::all();
         return response()->json([
             'status' => '200',
             'message' => 'guardado con exito',
-            'result' => $rta
+            'result' => $cliente
         ]);
     }
     public function save (Request $request){

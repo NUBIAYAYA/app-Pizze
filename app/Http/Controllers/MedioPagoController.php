@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\MedioPago;
 
 class MedioPagoController extends Controller
 {
@@ -10,19 +11,34 @@ class MedioPagoController extends Controller
 //
      
 public function getData(Request $request){
-    $rta = 10 + 20;
+    $medioPago=MedioPago::all();
     return response()->json([
         'status' => '200',
         'message' => 'guardado con exito',
-        'result' => $rta
+        'result' => $medioPago
     ]);
 }
 public function save (Request $request){
+    try{ 
+
+        $mediopago= new MedioPago();
+        $mediopago->Medio_Pago= $request->MedioPago;
+        $mediopago->Valor_Total_Pagar= $request->ValorTotalPagar;
+        $mediopago->id_orden= $request->idorden;
+        $mediopago->id_Cliente= $request->idcliente;
+        $mediopago->save();
+
+
     return response()->json([
         'status' => '200',
         'message' => 'guardado con exito',
-        'data' => $request -> nombre,
+        'data' => $request ->mediopago,
     ]);
+}
+catch(\Exception $e){
+    echo $e->getMessage();
+}
+
 }
 
 

@@ -13,11 +13,11 @@ class ProveedorController extends Controller
      //
      
    public function getData(Request $request){
-    $rta = 10 + 20;
+    $proveedor=Proveedor::all();
     return response()->json([
         'status' => '200',
         'message' => 'guardado con exito',
-        'result' => $rta
+        'result' => $proveedor
     ]);
 }
 public function save (Request $request){

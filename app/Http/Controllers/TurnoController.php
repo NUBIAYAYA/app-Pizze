@@ -11,11 +11,11 @@ class TurnoController extends Controller
  //
      
  public function getData(Request $request){
-    $rta = 10 + 20;
+    $turno=Turno::all();
     return response()->json([
         'status' => '200',
         'message' => 'guardado con exito',
-        'result' => $rta
+        'result' => $turno
     ]);
 }
 public function save (Request $request){

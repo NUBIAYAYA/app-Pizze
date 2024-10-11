@@ -11,11 +11,11 @@ class ProductoBodegaController extends Controller
      //
     
      public function getData(Request $request){
-        $rta = 10 + 20;
+        $productoBodega=ProductoBodega::all();
         return response()->json([
             'status' => '200',
             'message' => 'guardado con exito',
-            'result' => $rta
+            'result' => $productoBodega
         ]);
     }
     public function save (Request $request){

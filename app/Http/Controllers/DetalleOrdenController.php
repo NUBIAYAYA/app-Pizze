@@ -11,11 +11,12 @@ class DetalleOrdenController extends Controller
     //
      
     public function getData(Request $request){
-        $rta = 10 + 20;
+
+        $detalleorden=Detalleorden::all();
         return response()->json([
             'status' => '200',
             'message' => 'guardado con exito',
-            'result' => $rta
+            'result' => $detalleorden
         ]);
     }
     public function save (Request $request){
